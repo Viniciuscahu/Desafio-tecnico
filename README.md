@@ -98,6 +98,8 @@ mvn spring-boot:run
     </tr>
 </table>
 
+PS: Pode demorar um pouco para carregar os dados das APIs, devido à hospedagem no SQL Server Azure.
+
 <h2>4. Funcionalidades</h2>
 <p>A API oferece as seguintes funcionalidades:</p>
 <ul>
