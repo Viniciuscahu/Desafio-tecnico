@@ -70,19 +70,37 @@ cd todo-list-api
 
 4.3. Configuração do Banco de Dados
 
-Conexão com SQL Server no Azure
-
-Host: todo-list-server-sql.database.windows.net
-
-Database: to-do
-
-Porta: 1433
-
-Usuário: sadmin
-
-Senha: Todo@1234
-
-URL de conexão JDBC: jdbc:sqlserver://;serverName=todo-list-server-sql.database.windows.net;databaseName=to-do
+<h2>3. Conexão com o sql server na azure</h2>
+<table>
+    <tr>
+        <th>Configuração</th>
+        <th>Detalhes</th>
+    </tr>
+    <tr>
+        <td>Host</td>
+        <td>todo-list-server-sql.database.windows.net</td>
+    </tr>
+    <tr>
+        <td>Database</td>
+        <td>to-do</td>
+    </tr>
+    <tr>
+        <td>Porta</td>
+        <td>1433</td>
+    </tr>
+    <tr>
+        <td>Usuário</td>
+        <td>sadmin</td>
+    </tr>
+    <tr>
+        <td>Senha</td>
+        <td>Todo@1234</td>
+    </tr>
+    <tr>
+        <td>URL de Conexão</td>
+        <td>jdbc:sqlserver://;serverName=todo-list-server-sql.database.windows.net;databaseName=to-do</td>
+    </tr>
+</table>
 
 PS:Rodando via Docker (opcional para ambiente local)
 
@@ -94,7 +112,7 @@ docker run --name sqlserver -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Todo@1234' \
 Execute os scripts que vão estar na pasta db/migration para criar os bancos de DBO, desenvolvimento, teste e produção/
 
 
-<h2>4. Endpoints da API</h2>
+<h2>5.0 Endpoints da API</h2>
 <table>
     <tr>
         <th>Método</th>
