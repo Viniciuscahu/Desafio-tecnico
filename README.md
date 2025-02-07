@@ -138,49 +138,17 @@ mvn spring-boot:run
     <li>✅ <b>Git</b> - Controle de versão</li>
 </ul>
 4.2. Clonar o Repositório
-git clone [https://github.com/seu-usuario/todo-list-api.git](https://github.com/Viniciuscahu/Desafio-tecnico.git)
+git clone (https://github.com/seu_usuario/Desafio-tecnico.git)
 cd todo-list-api
 
 4.3. Configuração do Banco de Dados
 
-<h2>3. Conexão com o sql server na azure</h2>
-<table>
-    <tr>
-        <th>Configuração</th>
-        <th>Detalhes</th>
-    </tr>
-    <tr>
-        <td>Host</td>
-        <td>todo-list-server-sql.database.windows.net</td>
-    </tr>
-    <tr>
-        <td>Database</td>
-        <td>to-do</td>
-    </tr>
-    <tr>
-        <td>Porta</td>
-        <td>1433</td>
-    </tr>
-    <tr>
-        <td>Usuário</td>
-        <td>sadmin</td>
-    </tr>
-    <tr>
-        <td>Senha</td>
-        <td>Todo@1234</td>
-    </tr>
-    <tr>
-        <td>URL de Conexão</td>
-        <td>jdbc:sqlserver://;serverName=todo-list-server-sql.database.windows.net;databaseName=to-do</td>
-    </tr>
-</table>
-
-PS: Rodando via Docker (opcional para ambiente local)
+ Rodando via Docker (opcional para ambiente local)
 
 docker run --name sqlserver -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Todo@1234' \
    -p 1433:1433 -d mcr.microsoft.com/mssql/server:2019-latest
 
-   4.4 Configurar o Banco no SQL Server
+   4.4 Configurar o Banco 
 
 Execute os scripts que vão estar na pasta db/migration para criar os bancos de DBO, desenvolvimento, teste e produção/
 
