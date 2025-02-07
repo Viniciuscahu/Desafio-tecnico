@@ -1,0 +1,70 @@
+1️⃣ Criar uma nova tarefa (POST)
+Requisição (JSON)
+json
+Copiar
+Editar
+{
+  "title": "Finalizar documentação",
+  "description": "Escrever a documentação do projeto e revisar os endpoints",
+  "status": "PENDING"
+}
+
+Exemplo de requisição HTTP (cURL)
+sh
+Copiar
+Editar
+curl -X POST "http://localhost:8080/tasks" \
+     -H "Content-Type: application/json" \
+     -d '{
+           "title": "Finalizar documentação",
+           "description": "Escrever a documentação do projeto e revisar os endpoints",
+           "status": "PENDING"
+         }'
+
+2️⃣ Atualizar o status de uma tarefa (PUT)
+Requisição (JSON)
+json
+Copiar
+Editar
+{
+  "title": "Finalizar documentação",
+  "description": "Escrever a documentação do projeto e revisar os endpoints",
+  "status": "IN_PROGRESS"
+}
+
+Exemplo de requisição HTTP (cURL)
+sh
+Copiar
+Editar
+curl -X PUT "http://localhost:8080/tasks/1" \
+     -H "Content-Type: application/json" \
+     -d '{
+           "title": "Finalizar documentação",
+           "description": "Escrever a documentação do projeto e revisar os endpoints",
+           "status": "IN_PROGRESS"
+         }'
+
+3️⃣ Obter todas as tarefas (GET)
+Resposta esperada (JSON)
+json
+Copiar
+Editar
+[
+  {
+    "title": "Finalizar documentação",
+    "description": "Escrever a documentação do projeto e revisar os endpoints",
+    "status": "IN_PROGRESS"
+  },
+  {
+    "title": "Implementar autenticação",
+    "description": "Adicionar autenticação JWT para proteger a API",
+    "status": "PENDING"
+  }
+]
+
+Exemplo de requisição HTTP (cURL)
+sh
+Copiar
+Editar
+curl -X GET "http://localhost:8080/tasks" \
+     -H "Content-Type: application/json"
