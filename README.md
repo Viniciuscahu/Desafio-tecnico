@@ -1,69 +1,69 @@
 # Desafio-tecnico
 
-1. Introdução
+h2>1. Introdução</h2>
+<p>Este repositório contém a implementação de uma API RESTful para um sistema de gerenciamento de tarefas (To-Do List). O objetivo do projeto é fornecer uma solução eficiente para criação, edição e acompanhamento de tarefas, garantindo organização e produtividade. Foi desenvolvido utilizando <b>Java 21</b> com <b>Spring Boot 3</b>, seguindo os princípios de <b>Clean Code</b> e <b>Clean Architecture</b>, além de integração com o <b>SQL Server</b> para armazenamento de dados.</p>
 
-Este repositório contém a implementação de uma API RESTful para um sistema de gerenciamento de tarefas (To-Do List). O projeto foi desenvolvido em Java utilizando Spring Boot e SQL Server como banco de dados, seguindo os princípios de Clean Code e Clean Architecture.
+<h2>2. Funcionalidades</h2>
+<p>A API oferece as seguintes funcionalidades:</p>
+<ul>
+    <li>✅ Criar novas tarefas</li>
+    <li>📋 Listar todas as tarefas cadastradas</li>
+    <li>🔍 Buscar uma tarefa específica por ID</li>
+    <li>✏️ Atualizar uma tarefa existente</li>
+    <li>❌ Excluir uma tarefa</li>
+</ul>
 
-2. Funcionalidades
+<h3>Atributos de uma Tarefa</h3>
+<table>
+    <tr>
+        <th>Atributo</th>
+        <th>Descrição</th>
+    </tr>
+    <tr>
+        <td><b>id</b></td>
+        <td>Identificador único da tarefa</td>
+    </tr>
+    <tr>
+        <td><b>title</b></td>
+        <td>Título descritivo da tarefa</td>
+    </tr>
+    <tr>
+        <td><b>description</b></td>
+        <td>Detalhes sobre a tarefa</td>
+    </tr>
+    <tr>
+        <td><b>createdAt</b></td>
+        <td>Data de criação da tarefa</td>
+    </tr>
+    <tr>
+        <td><b>status</b></td>
+        <td>Status atual da tarefa (PENDING, IN_PROGRESS, COMPLETED)</td>
+    </tr>
+</table>
 
-A API permite:
+<h2>3. Tecnologias Utilizadas</h2>
+<p>O projeto foi desenvolvido com as seguintes tecnologias:</p>
+<ul>
+    <li>☕ <b>Java 21</b> - Linguagem principal</li>
+    <li>🚀 <b>Spring Boot 3</b> - Framework para desenvolvimento da API</li>
+    <li>🗄️ <b>Spring Data JPA</b> - Persistência de dados</li>
+    <li>🔒 <b>Spring Security</b> - Autenticação e segurança</li>
+    <li>💾 <b>SQL Server</b> - Banco de dados</li>
+    <li>🔄 <b>Git/GitHub</b> - Versionamento de código (GitFlow)</li>
+    <li>⚙️ <b>GitHub Actions</b> - CI/CD</li>
+    <li>☁️ <b>Azure</b> - Hospedagem da API e banco de dados</li>
+</ul>
 
-Criar novas tarefas;
-
-Listar todas as tarefas cadastradas;
-
-Buscar uma tarefa específica por ID;
-
-Atualizar uma tarefa existente;
-
-Excluir uma tarefa;
-
-Cada tarefa contém os seguintes atributos:
-
-id (identificador único)
-
-title (título da tarefa)
-
-description (descrição detalhada da tarefa)
-
-createdAt (data de criação da tarefa)
-
-status (status da tarefa: PENDING, IN_PROGRESS, COMPLETED)
-
-3. Tecnologias Utilizadas
-
-Java 21
-
-Spring Boot 3
-
-Spring Data JPA
-
-Spring Security (autenticação básica)
-
-SQL Server (banco de dados)
-
-Git/GitHub (controle de versão com GitFlow)
-
-GitHub Actions (CI/CD)
-
-Azure (hospedagem da API e banco de dados)
-
-4. Configuração do Ambiente
-
-4.1. Requisitos
-
-Antes de iniciar a API, certifique-se de ter instalado:
-
-Java 17 ou superior
-
-Maven
-
-Docker (opcional para rodar o banco de dados localmente)
-
-SQL Server
-
-Git
-
+<h2>4. Configuração do Ambiente</h2>
+<h3>4.1. Requisitos</h3>
+<p>Antes de iniciar a API, certifique-se de ter os seguintes itens instalados:</p>
+<ul>
+    <li>✅ <b>Java 17 ou superior</b></li>
+    <li>✅ <b>Maven</b> - Gerenciador de dependências</li>
+    <li>✅ <b>Docker</b> (opcional para rodar o banco de dados localmente)</li>
+    <li>✅ <b>SQL Server</b> - Banco de dados</li>
+    <li>✅ <b>Git</b> - Controle de versão</li>
+</ul>
 4.2. Clonar o Repositório
 git clone https://github.com/seu-usuario/todo-list-api.git
 cd todo-list-api
