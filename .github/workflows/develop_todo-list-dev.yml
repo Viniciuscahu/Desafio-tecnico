@@ -63,4 +63,5 @@ jobs:
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'todo-list-dev'
-          package: 'todo-list/target/*.jar'
+          package: '*.jar'
+
