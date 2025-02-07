@@ -27,11 +27,13 @@ jobs:
         run: mvn clean package -DskipTests
         working-directory: todo-list
 
+
       - name: Upload do Artefato para o Job de Deploy
         uses: actions/upload-artifact@v4
         with:
           name: java-app
-          path: 'target/todo-list-0.0.1-SNAPSHOT.jar'
+          path: 'todo-list/target/*.jar'
+
 
   deploy:
     runs-on: ubuntu-latest
@@ -48,6 +50,8 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: java-app
+          path: todo-list
+
 
       - name: Login no Azure
         uses: azure/login@v2
@@ -59,5 +63,5 @@ jobs:
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'todo-list-dev'
-          package: 'target/todo-list-0.0.1-SNAPSHOT.jar'
+          package: '*.jar'
 
