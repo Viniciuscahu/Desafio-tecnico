@@ -4,8 +4,77 @@
 <p>Este repositório contém a implementação de uma API RESTful para um sistema de gerenciamento de tarefas (To-Do List). O objetivo do projeto é fornecer uma solução eficiente para criação, edição, exclusão, e a leitura das tarefas. Foi desenvolvido utilizando <b>Java 21</b> com <b>Spring Boot 3</b>, seguindo os princípios de <b>Clean Code</b> e <b>Clean Architecture</b>, além de integração com o <b>SQL Server</b> para armazenamento de dados.</p>
 
 
-<h2>2. Infraestrutura na Azure</h2>
-<p>Para a hospedagem da API, foram criadas três instâncias do Azure Web App, cada uma destinada a um ambiente específico: <b>desenvolvimento</b> (develop), <b>teste</b> (tst) e <b>produção</b> (main). Devido a limitações da assinatura da Azure utilizada, não foi possível provisionar múltiplos bancos de dados, o que levou à utilização de um único banco de dados SQL Server, estruturado em <b>schemas</b> distintos para cada ambiente.</p>
+
+<h2>2. Testando o Banco de Dados Localmente</h2>
+<p>Se desejar testar a API com um banco de dados local, pode instalar o <b>SQL Server Express</b>, que é uma versão gratuita do SQL Server.</p>
+
+<h3>2.1. Instalação do SQL Server Express</h3>
+<p>Baixe e instale o SQL Server Express através do link oficial da Microsoft:</p>
+<p>🔗 <a href="https://www.microsoft.com/pt-br/sql-server/sql-server-downloads" target="_blank">Baixar SQL Server Express</a></p>
+
+<h3>2.2. Criar Banco de Dados Local</h3>
+<p>Após instalar o SQL Server, crie um banco de dados e uma tabela para armazenar as tarefas executando os comandos abaixo no SQL Server Management Studio (SSMS):</p>
+<pre>
+CREATE DATABASE to_do;
+GO
+USE to_do;
+GO
+CREATE TABLE tasks (
+    id BIGINT PRIMARY KEY IDENTITY(1,1),
+    title VARCHAR(255) NOT NULL,
+    description TEXT NOT NULL,
+    created_at DATETIME NOT NULL DEFAULT GETDATE(),
+    status VARCHAR(20) NOT NULL DEFAULT 'PENDING'
+);
+GO
+</pre>
+
+<h3>2.3. Configuração da API para Usar o Banco Local</h3>
+<p>Altere o arquivo <code>application.properties</code> para conectar ao banco local:</p>
+<pre>
+spring.datasource.url=jdbc:sqlserver://localhost\\SQLEXPRESS:1433;databaseName=to_do;encrypt=false;
+spring.datasource.username=sa
+spring.datasource.password=SUA_SENHA_AQUI
+spring.datasource.driver-class-name=com.microsoft.sqlserver.jdbc.SQLServerDriver
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+</pre>
+
+<h3>2.4. Rodando a API Localmente</h3>
+<p>Após configurar o banco, inicie a API com:</p>
+<pre>
+mvn spring-boot:run
+</pre>
+<p>Se tudo estiver correto, a API estará disponível em <code>http://localhost:8080</code>.</p>
+
+<h2>3. Infraestrutura na Azure</h2>
+<p>Para a hospedagem da API, foram criadas três instâncias do Azure Web App, cada uma destinada a um ambiente específico: <b>desenvolvimento</b> (develop), <b>teste</b> (tst) e <b>produção</b> (main). Devido a limitações da assinatura da Azure utilizada, não foi possível ter uma boa resposta rápida do servidor, o que levou à utilização de um único banco de dados SQL Server, estruturado em <b>schemas</b> distintos para cada ambiente.</p>
+
+<h3>3.1. Estrutura dos Ambientes</h3>
+<table>
+    <tr>
+        <th>Ambiente</th>
+        <th>Web App</th>
+        <th>Schema no Banco</th>
+    </tr>
+    <tr>
+        <td>Desenvolvimento</td>
+        <td>todo-list-dev</td>
+        <td>dev</td>
+    </tr>
+    <tr>
+        <td>Teste</td>
+        <td>todo-list-tst</td>
+        <td>tst</td>
+    </tr>
+    <tr>
+        <td>Produção</td>
+        <td>todo-list-main</td>
+        <td>prd</td>
+    </tr>
+</table>
+
+<p>Essa abordagem garante a separação lógica dos dados entre os diferentes ambientes, permitindo a validação e a garantia de qualidade antes da implantação final em produção, apesar da limitação no número de serviços disponíveis.</p>
 
 <h2>2. Funcionalidades</h2>
 <p>A API oferece as seguintes funcionalidades:</p>
