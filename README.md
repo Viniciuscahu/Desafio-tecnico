@@ -76,7 +76,29 @@ mvn spring-boot:run
 
 <p>Essa abordagem garante a separação lógica dos dados entre os diferentes ambientes, permitindo a validação e a garantia de qualidade antes da implantação final em produção, apesar da limitação no número de serviços disponíveis.</p>
 
-<h2>2. Funcionalidades</h2>
+
+<h2>3.2 Links dos Ambientes Hospedados</h2>
+<p>A API está disponível nos seguintes ambientes hospedados na Azure:</p>
+<table>
+    <tr>
+        <th>Ambiente</th>
+        <th>URL</th>
+    </tr>
+    <tr>
+        <td>Desenvolvimento</td>
+        <td><a href="https://todo-list-dev-gdaxgsdsgffsfdae.brazilsouth-01.azurewebsites.net/api/tasks" target="_blank">todo-list-dev</a></td>
+    </tr>
+    <tr>
+        <td>Teste</td>
+        <td><a href="https://todo-list-tst.azurewebsites.net/api/tasks" target="_blank">todo-list-tst</a></td>
+    </tr>
+    <tr>
+        <td>Produção</td>
+        <td><a href="https://todo-list-prd.azurewebsites.net/api/tasks" target="_blank">todo-list-prd</a></td>
+    </tr>
+</table>
+
+<h2>4. Funcionalidades</h2>
 <p>A API oferece as seguintes funcionalidades:</p>
 <ul>
     <li>✅ Criar novas tarefas</li>
@@ -114,7 +136,7 @@ mvn spring-boot:run
     </tr>
 </table>
 
-<h2>3. Tecnologias Utilizadas</h2>
+<h2>5. Tecnologias Utilizadas</h2>
 <p>O projeto foi desenvolvido com as seguintes tecnologias:</p>
 <ul>
     <li>☕ <b>Java 21</b> - Linguagem principal</li>
@@ -127,8 +149,8 @@ mvn spring-boot:run
     <li>☁️ <b>Azure</b> - Hospedagem da API e banco de dados</li>
 </ul>
 
-<h2>4. Configuração do Ambiente</h2>
-<h3>4.1. Requisitos</h3>
+<h2>6. Configuração do Ambiente</h2>
+<h3>6.1. Requisitos</h3>
 <p>Antes de iniciar a API, certifique-se de ter os seguintes itens instalados:</p>
 <ul>
     <li>✅ <b>Java 17 ou superior</b></li>
@@ -137,23 +159,23 @@ mvn spring-boot:run
     <li>✅ <b>SQL Server</b> - Banco de dados</li>
     <li>✅ <b>Git</b> - Controle de versão</li>
 </ul>
-4.2. Clonar o Repositório
+6.2. Clonar o Repositório
 git clone (https://github.com/seu_usuario/Desafio-tecnico.git)
 cd todo-list-api
 
-4.3. Configuração do Banco de Dados
+6.3. Configuração do Banco de Dados
 
  Rodando via Docker (opcional para ambiente local)
 
 docker run --name sqlserver -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Todo@1234' \
    -p 1433:1433 -d mcr.microsoft.com/mssql/server:2019-latest
 
-   4.4 Configurar o Banco 
+   6.4 Configurar o Banco 
 
 Execute os scripts que vão estar na pasta db/migration para criar os bancos de DBO, desenvolvimento, teste e produção/
 
 
-<h2>5.0 Endpoints da API</h2>
+<h2>7.0 Endpoints da API</h2>
 <table>
     <tr>
         <th>Método</th>
@@ -188,14 +210,14 @@ Execute os scripts que vão estar na pasta db/migration para criar os bancos de 
 </table>
 
 
-<h2>5. Autenticação</h2>
+<h2>8. Autenticação</h2>
 <p>A API utiliza autenticação básica via Spring Security. Para acessar os endpoints, no postman use, no authorization, auth type: basic auth:</p>
 <ul>
     <li><b>Usuário:</b> admin</li>
     <li><b>Senha:</b> admin123</li>
 </ul>
 
-<h2>6. CI/CD e Deploy</h2>
+<h2>9. CI/CD e Deploy</h2>
 <p>A esteira CI/CD foi configurada utilizando <b>GitHub Actions</b> para build e deploy automático na plataforma <b>Azure Web Apps</b> e utiliza <b>Azure SQL Server</b> como banco de dados.</p>
 
 
