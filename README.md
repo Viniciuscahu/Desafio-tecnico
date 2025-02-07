@@ -3,6 +3,10 @@
 <h2>1. Introdução</h2>
 <p>Este repositório contém a implementação de uma API RESTful para um sistema de gerenciamento de tarefas (To-Do List). O objetivo do projeto é fornecer uma solução eficiente para criação, edição, exclusão, e a leitura das tarefas. Foi desenvolvido utilizando <b>Java 21</b> com <b>Spring Boot 3</b>, seguindo os princípios de <b>Clean Code</b> e <b>Clean Architecture</b>, além de integração com o <b>SQL Server</b> para armazenamento de dados.</p>
 
+
+<h2>2. Infraestrutura na Azure</h2>
+<p>Para a hospedagem da API, foram criadas três instâncias do Azure Web App, cada uma destinada a um ambiente específico: <b>desenvolvimento</b> (develop), <b>teste</b> (tst) e <b>produção</b> (main). Devido a limitações da assinatura da Azure utilizada, não foi possível provisionar múltiplos bancos de dados, o que levou à utilização de um único banco de dados SQL Server, estruturado em <b>schemas</b> distintos para cada ambiente.</p>
+
 <h2>2. Funcionalidades</h2>
 <p>A API oferece as seguintes funcionalidades:</p>
 <ul>
