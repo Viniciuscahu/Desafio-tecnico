@@ -102,12 +102,12 @@ cd todo-list-api
     </tr>
 </table>
 
-PS:Rodando via Docker (opcional para ambiente local)
+PS: Rodando via Docker (opcional para ambiente local)
 
 docker run --name sqlserver -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Todo@1234' \
    -p 1433:1433 -d mcr.microsoft.com/mssql/server:2019-latest
 
-   Configurar o Banco no SQL Server
+   4.4 Configurar o Banco no SQL Server
 
 Execute os scripts que vão estar na pasta db/migration para criar os bancos de DBO, desenvolvimento, teste e produção/
 
@@ -145,6 +145,17 @@ Execute os scripts que vão estar na pasta db/migration para criar os bancos de 
         <td>Deleta uma tarefa</td>
     </tr>
 </table>
+
+
+<h2>5. Autenticação</h2>
+<p>A API utiliza autenticação básica via Spring Security. Para acessar os endpoints, no postman use, no authorization, auth type: basic auth:</p>
+<ul>
+    <li><b>Usuário:</b> admin</li>
+    <li><b>Senha:</b> admin123</li>
+</ul>
+
+<h2>6. CI/CD e Deploy</h2>
+<p>A esteira CI/CD foi configurada utilizando <b>GitHub Actions</b> para build e deploy automático na plataforma <b>Azure Web Apps</b> e utiliza <b>Azure SQL Server</b> como banco de dados.</p>
 
 
 
