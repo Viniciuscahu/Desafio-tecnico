@@ -53,11 +53,6 @@ mvn spring-boot:run
 <h3>3.1. Estrutura dos Ambientes</h3>
 <table>
     <tr>
-        <th>Ambiente</th>
-        <th>Web App</th>
-        <th>Schema no Banco</th>
-    </tr>
-    <tr>
         <td>Desenvolvimento</td>
         <td>todo-list-dev</td>
         <td>dev</td>
@@ -99,6 +94,26 @@ mvn spring-boot:run
 </table>
 
 PS: Pode demorar um pouco para carregar os dados das APIs, devido à hospedagem no SQL Server Azure.
+
+<h2>3.3. Screenshots dos Ambientes</h2>
+
+<h3>3.4. Ambiente de Desenvolvimento</h3>
+<p>API rodando em <b>Develop</b>:</p>
+<img width="920" alt="Pasted Graphic" src="https://github.com/user-attachments/assets/61afccef-3817-4619-8af9-6644f2d80c2e" />
+<p>Banco de dados do ambiente <b>Develop</b>:</p>
+<img width="695" alt="Az description" src="https://github.com/user-attachments/assets/1f37d896-aa75-4d95-a3f7-712b83bb1544" />
+
+<h3>3.5. Ambiente de Teste</h3>
+<p>API rodando em <b>Test</b>:</p>
+<img width="523" alt="Pasted Graphic" src="https://github.com/user-attachments/assets/9bcf43a0-76e3-4553-8523-7b08b2cdda0e" />
+<p>Banco de dados do ambiente <b>Test</b>:</p>
+<img width="717" alt="image" src="https://github.com/user-attachments/assets/1d6f7e71-688e-4acb-8fbc-e610ede529fb" />
+
+<h3>3.6. Ambiente de Produção</h3>
+<p>API rodando em <b>Produção</b>:</p>
+<img width="462" alt="image" src="https://github.com/user-attachments/assets/4a00bf2c-1a76-43b7-a5a2-685292dde17c" />
+<p>Banco de dados do ambiente <b>Produção</b>:</p>
+<img width="766" alt="image" src="https://github.com/user-attachments/assets/df79ec18-558e-40e8-8489-389507999c5e" />
 
 <h2>4. Funcionalidades</h2>
 <p>A API oferece as seguintes funcionalidades:</p>
