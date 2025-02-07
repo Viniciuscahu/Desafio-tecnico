@@ -1,4 +1,3 @@
-tst:
 # GitHub Actions for Build and Deploy of the Java API to Azure Web App - TST
 name: Build and deploy JAR app to Azure Web App - todo-list-tst
 
@@ -39,7 +38,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     environment:
-      name: 'test'
+      name: 'testing'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     permissions:
       id-token: write
