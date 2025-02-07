@@ -63,3 +63,72 @@ Docker (opcional para rodar o banco de dados localmente)
 SQL Server
 
 Git
+
+4.2. Clonar o Repositório
+git clone https://github.com/seu-usuario/todo-list-api.git
+cd todo-list-api
+
+4.3. Configuração do Banco de Dados
+
+Conexão com SQL Server no Azure
+
+Host: todo-list-server-sql.database.windows.net
+
+Database: to-do
+
+Porta: 1433
+
+Usuário: sadmin
+
+Senha: Todo@1234
+
+URL de conexão JDBC: jdbc:sqlserver://;serverName=todo-list-server-sql.database.windows.net;databaseName=to-do
+
+PS:Rodando via Docker (opcional para ambiente local)
+
+docker run --name sqlserver -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Todo@1234' \
+   -p 1433:1433 -d mcr.microsoft.com/mssql/server:2019-latest
+
+   Configurar o Banco no SQL Server
+
+Execute os scripts que vão estar na pasta db/migration para criar os bancos de DBO, desenvolvimento, teste e produção/
+
+
+<h2>4. Endpoints da API</h2>
+<table>
+    <tr>
+        <th>Método</th>
+        <th>URL</th>
+        <th>Descrição</th>
+    </tr>
+    <tr>
+        <td>GET</td>
+        <td>/api/tasks</td>
+        <td>Lista todas as tarefas</td>
+    </tr>
+    <tr>
+        <td>GET</td>
+        <td>/api/tasks/{id}</td>
+        <td>Busca uma tarefa por ID</td>
+    </tr>
+    <tr>
+        <td>POST</td>
+        <td>/api/tasks</td>
+        <td>Cria uma nova tarefa</td>
+    </tr>
+    <tr>
+        <td>PUT</td>
+        <td>/api/tasks/{id}</td>
+        <td>Atualiza uma tarefa</td>
+    </tr>
+    <tr>
+        <td>DELETE</td>
+        <td>/api/tasks/{id}</td>
+        <td>Deleta uma tarefa</td>
+    </tr>
+</table>
+
+
+
+
+
