@@ -65,7 +65,7 @@
     <li>✅ <b>Git</b> - Controle de versão</li>
 </ul>
 4.2. Clonar o Repositório
-git clone https://github.com/seu-usuario/todo-list-api.git
+git clone [https://github.com/seu-usuario/todo-list-api.git](https://github.com/Viniciuscahu/Desafio-tecnico.git)
 cd todo-list-api
 
 4.3. Configuração do Banco de Dados
